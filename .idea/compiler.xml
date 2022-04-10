@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="junit_app" />
         <module name="Junit5" />
+        <module name="Junit_app" />
       </profile>
     </annotationProcessing>
   </component>

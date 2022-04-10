@@ -108,11 +108,11 @@ class AccountTest {
 
         }
 
-        @RepeatedTest(value=3, name="Repiticion number {currentRepetition} of {totalRepetitions}")
+        @RepeatedTest(value = 3, name = "Repiticion number {currentRepetition} of {totalRepetitions}")
         @DisplayName("Testing all the things :)")
         void testRelationBankAccountRepetition(RepetitionInfo info) {
 
-            if(info.getCurrentRepetition() == 2){
+            if (info.getCurrentRepetition() == 2) {
                 System.out.println("we are in the repetittion number " + info.getCurrentRepetition());
             }
             Account account1 = new Account("Martin", new BigDecimal(2000));
@@ -235,13 +235,13 @@ class AccountTest {
 
 
     @ParameterizedTest(name = "number {index} executing with the value {0} - {argumentsWithNames}")
-    @ValueSource(strings = { "100","200","300"})
+    @ValueSource(strings = {"100", "200", "300"})
     void testAccountCredit(String amount) {
         account.credit(new BigDecimal(amount));
         assertNotNull(account.getAmount());
 //        assertEquals(1100, account.getAmount().intValue());
 //        assertEquals("1100.12345", account.getAmount().toPlainString());
-        assertTrue(account.getAmount().compareTo(BigDecimal.ZERO)>0);
+        assertTrue(account.getAmount().compareTo(BigDecimal.ZERO) > 0);
     }
 
 }
